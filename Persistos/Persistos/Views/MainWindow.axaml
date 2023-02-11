@@ -16,13 +16,46 @@
 
 	<StackPanel Margin="10" Background="Orange" Orientation="Horizontal">
 
-		<ListBox Height="410"
-				 Width="300"
+		<ListBox 
 				 Background="Blue"
 				 CornerRadius="20"
 				 VerticalAlignment="Top"
 				 Margin="10"
-			 >
+				 Items="{Binding studentsList}" >
+
+
+			<ListBox.ItemTemplate>
+				<DataTemplate>
+					<ListBoxItem Background="Violet" CornerRadius="20" Width="200" Height="100"  >
+
+						<StackPanel Orientation="Vertical">
+						<StackPanel Orientation="Horizontal" Margin="10,2,0,0">
+							<Label Content="Name:" Foreground="White"/>
+
+							<Label Content="{Binding Name}" Foreground="White"/>
+							
+						</StackPanel>
+
+							<StackPanel Orientation="Horizontal" Margin="10,4,0,0">
+								<Label Content="Major:" Foreground="White"/>
+
+								<Label Content="{Binding Major}" Foreground="White"/>
+
+							</StackPanel>
+
+
+							<StackPanel Orientation="Horizontal" Margin="10,4,0,0">
+								<Label Content="Semester:" Foreground="White"/>
+
+								<Label Content="{Binding Semester}" Foreground="White"/>
+
+							</StackPanel>
+						</StackPanel>
+						
+					</ListBoxItem>
+				</DataTemplate>
+			</ListBox.ItemTemplate>
+		
 			
 			
 		</ListBox>
@@ -31,24 +64,28 @@
 			<StackPanel.Styles>
 				<Style Selector="Button:pointerover /template/ ContentPresenter">
 					<Setter Property="CornerRadius" Value="20"/>
-					<Setter Property="Width" Value="100"/>
-					<Setter Property="Background" Value="Blue"/>
+					<Setter Property="Background" Value="Pink"/>
+					<Setter Property="Width" Value="130"/>
+					<Setter Property="HorizontalContentAlignment" Value="Center"/>
+					<Setter Property="TextBlock.Foreground" Value="White"/>
 
 				</Style>
 				<Style Selector="Button">
 					<Setter Property="CornerRadius" Value="20"/>
-					<Setter Property="Background" Value="LightBlue"/>
-					<Setter Property="Width" Value="100"/>
+					<Setter Property="Background" Value="BlueViolet"/>
+					<Setter Property="Width" Value="130"/>
+					<Setter Property="HorizontalContentAlignment" Value="Center"/>
+					<Setter Property="Foreground" Value="White"/>
 					
 
 				</Style>
 			</StackPanel.Styles>
 			
 			
-			<Button>Create Item</Button>
-			<Button>Delete Item</Button>
+			<Button>Create Student</Button>
+			<Button>Delete Student</Button>
 
-			<Button>Update Item</Button>
+			<Button>Update Student</Button>
 
 
 		</StackPanel>
